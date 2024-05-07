@@ -1,6 +1,20 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Lane Menu V1", "DarkTheme")
 
+-- Main
+local Main = Window:NewTab("Local")
+local MainSection = Main:NewSection("Local")
+
+MainSection:NewLabel("Player")
+
+MainSection:NewSlider("WalkSpeed", "Run fast", 350, 16, function(s) -- 350 Máximo | 16 Mínimo 
+    LoopPlayerSpeed(s)
+end)
+
+MainSection:NewSlider("JumpPower", "Jump Highest", 500, 50, function(s) -- 500 Máximo | 500 Mínimo 
+    LoopPlayerJump(s)
+end)
+
 -- Loops
 local function LoopPlayerSpeed(s)
     while true do
@@ -15,19 +29,6 @@ local function LoopPlayerJump(s)
         wait(0.0001)
     end
 end
--- Main
-local Main = Window:NewTab("Local")
-local MainSection = Main:NewSection("Local")
-
-MainSection:NewLabel("Player")
-
-MainSection:NewSlider("WalkSpeed", "Run fast", 350, 16, function(s) -- 350 Máximo | 16 Mínimo 
-    LoopPlayerSpeed(s)
-end)
-
-MainSection:NewSlider("JumpPower", "Jump Highest", 500, 50, function(s) -- 500 Máximo | 500 Mínimo 
-    LoopPlayerJump(s)
-end)
 
 -- Settings
 local Settings = Window:NewTab("Settings")
