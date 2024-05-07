@@ -17,7 +17,7 @@ local function LoopPlayerJump(s)
 end
 -- Main
 local Main = Window:NewTab("Local")
-Local MainSection = Main:NewSection("Local")
+local MainSection = Main:NewSection("Local")
 
 MainSection:NewLabel("Player")
 
