@@ -5,21 +5,13 @@ local MainSection = Main:NewSection("Local")
 
 MainSection:NewLabel("Player")
 
-local function playerLoop()
-   while true do
-	MainSection:NewSlider("WalkSpeed", "Run fast", 350, 16, function(s) -- 350 Máximo | 16 Mínimo 
-	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-	end)
+MainSection:NewSlider("WalkSpeed", "Run fast", 350, 16, function(s) -- 350 Máximo | 16 Mínimo 
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
 	
-	MainSection:NewSlider("JumpPower", "Jump Highest", 500, 50, function(s) -- 500 Máximo | 500 Mínimo 
-	    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
-	end)
-
-	wait(0.0001)
-	end
-end
--- Chamar funcao loop
-playerLoop()
+MainSection:NewSlider("JumpPower", "Jump Highest", 500, 50, function(s) -- 500 Máximo | 500 Mínimo 
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
 
 local Settings = Window:NewTab("Settings")
 local SettingsSection = Settings:NewSection("Menu Settings")
